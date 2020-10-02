@@ -24,6 +24,16 @@ class BasePage:
             return False
         return True
 
+    def find(self, how, what):
+        try:
+            element = self.browser.find_element(how, what)
+        except NoSuchElementException:
+            return None
+        return element
+
+    def find_all(self, how, what):
+        return self.browser.find_elements(how, what)
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]

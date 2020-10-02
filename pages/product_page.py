@@ -13,11 +13,11 @@ class ProductPage(BasePage):
         return self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
 
     def should_be_product_name_in_message(self, product_name):
-        message = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text
+        message = self.find(*ProductPageLocators.SUCCESS_MESSAGE).text
         assert product_name in message, "No product name '%s' in message" % product_name
 
     def should_be_product_price_in_message(self, product_price):
-        message = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE).text
+        message = self.find(*ProductPageLocators.SUCCESS_MESSAGE).text
         assert product_price in message, "No product price '%s' in message" % product_price
 
     def should_not_be_success_message(self):

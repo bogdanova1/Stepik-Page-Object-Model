@@ -29,8 +29,6 @@ def test_guest_can_add_product_to_basket(browser,link):
 
     BasePage.solve_quiz_and_get_code(product_page)
 
-    message = browser.find_element_by_css_selector("#messages").text
-
     product_page.should_be_product_name_in_message(product_name)
     product_page.should_be_product_price_in_message(product_price)
 
