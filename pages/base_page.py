@@ -77,3 +77,6 @@ class BasePage:
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
+    @staticmethod
+    def find_in_element(parent, locator):
+        return parent.find_element_by_CSS_slector(locator)

@@ -3,14 +3,14 @@ from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
     def add_product_to_backet(self):
-        button= self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
+        button= self.findt(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         button.click()
 
     def get_product_name(self):
-        return self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
+        return self.find(*ProductPageLocators.PRODUCT_NAME).text
 
     def get_product_price(self):
-        return self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
+        return self.find(*ProductPageLocators.PRODUCT_PRICE).text
 
     def should_be_product_name_in_message(self, product_name):
         message = self.find(*ProductPageLocators.SUCCESS_MESSAGE).text
