@@ -1,9 +1,9 @@
 from .base_page import BasePage
-from .locators import MainPageLocators
 
 
 class MainPage(BasePage):
-    class MainPage(BasePage):
-        def __init__(self, *args, **kwargs):
-            super(MainPage, self).__init__(*args, **kwargs)
+    main_page_link="http://selenium1py.pythonanywhere.com/"
+
+    def __init__(self,browser):
+        BasePage.__init__(self, browser, MainPage.main_page_link)
 
